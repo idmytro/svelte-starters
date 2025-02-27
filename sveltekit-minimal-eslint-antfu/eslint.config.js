@@ -7,12 +7,20 @@ export default antfu(
   {
     rules: {
       'svelte/html-quotes': [2, {
-        prefer: 'double', // or "single"
+        prefer: 'double',
         dynamic: {
           quoted: false,
           avoidInvalidUnquotedInHTML: false,
         },
       }],
+      'style/space-before-function-paren': [
+        2,
+        {
+          anonymous: 'always',
+          named: 'always',
+          asyncArrow: 'always',
+        },
+      ],
     },
   },
 )
