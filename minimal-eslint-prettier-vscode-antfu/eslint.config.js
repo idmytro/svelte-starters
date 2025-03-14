@@ -1,5 +1,4 @@
 import { fileURLToPath } from 'node:url'
-
 import antfu from '@antfu/eslint-config'
 import { includeIgnoreFile } from '@eslint/compat'
 import js from '@eslint/js'
@@ -11,7 +10,7 @@ import svelteConfig from './svelte.config.js'
 
 const gitignorePath = fileURLToPath(new URL('./.gitignore', import.meta.url))
 
-export const a = antfu(
+const config = antfu(
   { svelte: true },
   includeIgnoreFile(gitignorePath),
   js.configs.recommended,
@@ -46,4 +45,4 @@ export const a = antfu(
   }
 )
 
-export default a
+export default config
