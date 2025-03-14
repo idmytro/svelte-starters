@@ -1,5 +1,10 @@
 # sv
 
+```bash
+npx degit idmytro/svelte-starters/minimal-4-antfu .
+```
+--------
+
 Everything you need to build a Svelte project, powered by [`sv`](https://github.com/sveltejs/cli).
 
 ## Creating a project
