@@ -1,7 +1,7 @@
 # sv
 
 ```bash
-npx degit idmytro/svelte-starters/minimal-eslint-prettier .
+npx degit idmytro/svelte-starters/minimal-eslint-prettier-vscode .
 ```
 --------
 

@@ -7,6 +7,7 @@ import { fileURLToPath } from 'node:url';
 import ts from 'typescript-eslint';
 import svelteConfig from './svelte.config.js';
 const gitignorePath = fileURLToPath(new URL('./.gitignore', import.meta.url));
+import stylistic from '@stylistic/eslint-plugin'
 
 export default ts.config(
 	includeIgnoreFile(gitignorePath),
@@ -35,5 +36,13 @@ export default ts.config(
 				svelteConfig
 			}
 		}
+	},
+	{
+		plugins: {
+			'@stylistic': stylistic
+		},
+		rules: {
+			'@stylistic/space-before-function-paren': [2, 'always']
+		},
 	}
 );
