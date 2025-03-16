@@ -1,3 +1,3 @@
 ```bash
-npx degit idmytro/sminimal-prettier-eslint-tw-md .
+npx degit idmytro/minimal-prettier-eslint-tw-md .
 ```
