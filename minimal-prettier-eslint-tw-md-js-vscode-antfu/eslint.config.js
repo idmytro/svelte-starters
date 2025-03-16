@@ -1,39 +1,41 @@
-import prettier from 'eslint-config-prettier';
-import js from '@eslint/js';
-import { includeIgnoreFile } from '@eslint/compat';
-import svelte from 'eslint-plugin-svelte';
-import globals from 'globals';
-import { fileURLToPath } from 'node:url';
-import ts from 'typescript-eslint';
-import svelteConfig from './svelte.config.js';
-const gitignorePath = fileURLToPath(new URL('./.gitignore', import.meta.url));
+import { fileURLToPath } from 'node:url'
+import antfu from '@antfu/eslint-config'
+import { includeIgnoreFile } from '@eslint/compat'
+import svelte from 'eslint-plugin-svelte'
+import globals from 'globals'
+import svelteConfig from './svelte.config.js'
 
-export default ts.config(
-	includeIgnoreFile(gitignorePath),
-	js.configs.recommended,
-	...ts.configs.recommended,
-	...svelte.configs.recommended,
-	prettier,
-	...svelte.configs.prettier,
-	{
-		languageOptions: {
-			globals: {
-				...globals.browser,
-				...globals.node
-			}
-		}
-	},
-	{
-		files: ['**/*.svelte', '**/*.svelte.ts', '**/*.svelte.js'],
-		ignores: ['eslint.config.js', 'svelte.config.js'],
+const gitignorePath = fileURLToPath(new URL('./.gitignore', import.meta.url))
 
-		languageOptions: {
-			parserOptions: {
-				projectService: true,
-				extraFileExtensions: ['.svelte'],
-				parser: ts.parser,
-				svelteConfig
-			}
-		}
-	}
-);
+export default antfu(
+  {
+    svelte: true,
+  },
+  includeIgnoreFile(gitignorePath),
+  ...svelte.configs.recommended,
+  ...svelte.configs.prettier,
+  {
+    languageOptions: {
+      globals: {
+        ...globals.browser,
+        ...globals.node,
+      },
+    },
+  },
+  {
+    rules: {
+      'style/space-before-function-paren': [2, 'always'],
+    },
+  },
+  {
+    files: ['**/*.svelte', '**/*.svelte.js'],
+    languageOptions: {
+      parserOptions: {
+        svelteConfig,
+      },
+    },
+    rules: {
+      'prefer-const': 0,
+    },
+  },
+)
