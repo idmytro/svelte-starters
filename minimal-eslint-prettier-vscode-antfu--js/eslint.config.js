@@ -36,5 +36,8 @@ export default antfu(
         svelteConfig,
       },
     },
+    rules: {
+      'prefer-const': 0,
+    }
   },
 )
