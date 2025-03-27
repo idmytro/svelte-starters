@@ -1,7 +1,7 @@
-# minimal-prettier-vscode-eslint-plus
+# minimal-prettier-vscode-eslint-plus--js--4
 
 ```bash
-npx degit idmytro/svelte-starters/minimal-prettier-vscode-eslint-plus .
+npx degit minimal-prettier-vscode-eslint-plus--js--4 .
 ```
 --------
 
