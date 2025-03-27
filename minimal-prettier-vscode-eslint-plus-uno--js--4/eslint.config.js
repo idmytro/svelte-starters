@@ -1,6 +1,7 @@
 import { includeIgnoreFile } from '@eslint/compat';
 import js from '@eslint/js';
 import stylistic from '@stylistic/eslint-plugin'
+import unocss from '@unocss/eslint-config/flat'
 import prettier from 'eslint-config-prettier';
 import packageJson from "eslint-plugin-package-json";
 import perfectionist from 'eslint-plugin-perfectionist'
@@ -20,6 +21,7 @@ export default [
   ...svelte.configs.recommended,
   prettier,
   ...svelte.configs.prettier,
+  unocss,
   {
     languageOptions: {
       globals: {

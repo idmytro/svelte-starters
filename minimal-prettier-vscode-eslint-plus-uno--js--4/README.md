@@ -1,7 +1,7 @@
-# minimal-prettier-vscode-eslint-plus--js--4
+# minimal-prettier-vscode-eslint-plus-uno--js--4
 
 ```bash
-npx degit minimal-prettier-vscode-eslint-plus--js--4 .
+npx degit minimal-prettier-vscode-eslint-plus-uno--js--4 .
 ```
 --------
 
