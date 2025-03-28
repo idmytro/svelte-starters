@@ -1,17 +1,16 @@
-import { includeIgnoreFile } from '@eslint/compat';
-import js from '@eslint/js';
+import { includeIgnoreFile } from '@eslint/compat'
+import js from '@eslint/js'
 import stylistic from '@stylistic/eslint-plugin'
 import unocss from '@unocss/eslint-config/flat'
-import prettier from 'eslint-config-prettier';
-import packageJson from "eslint-plugin-package-json";
+import packageJson from 'eslint-plugin-package-json'
 import perfectionist from 'eslint-plugin-perfectionist'
-import svelte from 'eslint-plugin-svelte';
-import globals from 'globals';
-import { fileURLToPath } from 'node:url';
+import svelte from 'eslint-plugin-svelte'
+import globals from 'globals'
+import { fileURLToPath } from 'node:url'
 
-import svelteConfig from './svelte.config.js';
+import svelteConfig from './svelte.config.js'
 
-const gitignorePath = fileURLToPath(new URL('./.gitignore', import.meta.url));
+const gitignorePath = fileURLToPath(new URL('./.gitignore', import.meta.url))
 
 /** @type {import('eslint').Linter.Config[]} */
 export default [
@@ -19,31 +18,30 @@ export default [
   includeIgnoreFile(gitignorePath),
   js.configs.recommended,
   ...svelte.configs.recommended,
-  prettier,
-  ...svelte.configs.prettier,
   unocss,
+  stylistic.configs.recommended,
   {
     languageOptions: {
       globals: {
         ...globals.browser,
-        ...globals.node
-      }
-    }
+        ...globals.node,
+      },
+    },
   },
   {
     files: ['**/*.svelte', '**/*.svelte.js'],
     languageOptions: {
       parserOptions: {
-        svelteConfig
-      }
-    }
+        svelteConfig,
+      },
+    },
   },
   {
     plugins: {
-      '@stylistic': stylistic
+      '@stylistic': stylistic,
     },
     rules: {
-      '@stylistic/space-before-function-paren': [2, 'always']
+      '@stylistic/space-before-function-paren': [2, 'always'],
     },
   },
   {
@@ -54,9 +52,9 @@ export default [
       'perfectionist/sort-imports': [
         2,
         {
-          internalPattern: ['^\\$.*']
-        }
+          internalPattern: ['^\\$.*'],
+        },
       ],
     },
   },
-];
+]
