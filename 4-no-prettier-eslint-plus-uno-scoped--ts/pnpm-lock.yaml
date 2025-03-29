@@ -29,6 +29,9 @@ importers:
       '@unocss/eslint-config':
         specifier: 66.0.0
         version: 66.0.0(eslint@9.23.0(jiti@2.4.2))(typescript@5.8.2)
+      '@unocss/svelte-scoped':
+        specifier: 66.0.0
+        version: 66.0.0
       eslint:
         specifier: ^9.18.0
         version: 9.23.0(jiti@2.4.2)
@@ -610,6 +613,9 @@ packages:
   '@unocss/rule-utils@66.0.0':
     resolution: {integrity: sha512-UJ51YHbwxYTGyj35ugsPlOT4gaa7tCbXdywZ3m5Nn0JgywwIqGmBFyiN9ZjHBHfJuDxmmPd6lxojoBscih/WMQ==}
     engines: {node: '>=14'}
+
+  '@unocss/svelte-scoped@66.0.0':
+    resolution: {integrity: sha512-+9LpOamQHG3yONDyVmhNQlR0S5QkZ9Xl2j6mVaNJuk8YXnijuCxQm1fMWVD4q0gANDoInGQMq8JjZH/bzLIq8Q==}
 
   '@unocss/transformer-attributify-jsx@66.0.0':
     resolution: {integrity: sha512-jS7szFXXC6RjTv9wo0NACskf618w981bkbyQ5izRO7Ha47sNpHhHDpaltnG7SR9qV4cCtGalOw4onVMHsRKwRg==}
@@ -2108,6 +2114,14 @@ snapshots:
   '@unocss/rule-utils@66.0.0':
     dependencies:
       '@unocss/core': 66.0.0
+      magic-string: 0.30.17
+
+  '@unocss/svelte-scoped@66.0.0':
+    dependencies:
+      '@unocss/config': 66.0.0
+      '@unocss/preset-uno': 66.0.0
+      '@unocss/reset': 66.0.0
+      css-tree: 3.1.0
       magic-string: 0.30.17
 
   '@unocss/transformer-attributify-jsx@66.0.0':
