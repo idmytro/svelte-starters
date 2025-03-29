@@ -1,6 +1,4 @@
 <script>
-  import 'virtual:uno.css';
-
   let count = 0;
 
   function incrementCount () {
@@ -8,10 +6,7 @@
   }
 </script>
 
-<button
-  on:click={incrementCount}
-  class="text-white font-bold px-4 py-2 rounded bg-[#1d4ed8] w-200px"
->
+<button on:click={incrementCount} class="w-200px bg-[#1d4ed8] px-4 py-2 text-white font-bold">
   Clicked {count}
   {count === 1 ? 'time' : 'times'}
 </button>
