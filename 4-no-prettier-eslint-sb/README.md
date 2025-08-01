@@ -19,3 +19,6 @@ Untracked files:
 	src/stories/
 
 no changes added to commit (use "git add" and/or "git commit -a")
+
+
+@storybook+addon-svelte-csf@5.0.7_@storybook+svelte@9.1.0_storybook@9.1.0_@testing-libr_89f0fddee49c30538dc99a897e366194/node_modules/@storybook/addon-svelte-csf/dist/index.js:2:27:
