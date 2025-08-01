@@ -1,10 +1,9 @@
 <script>
+  import '../assets/main.css'
   import { page } from '$app/stores'
 
   let currentPath
   $: currentPath = $page.url.pathname
-
-  import '../assets/main.css'
 </script>
 
 <div id="app">
