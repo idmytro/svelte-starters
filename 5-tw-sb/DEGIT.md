@@ -1,5 +1,5 @@
 ```
-npx degit idmytro/svelte-starters/5-oct11 .
+npx degit idmytro/svelte-starters/5-tw-sb .
 ```
 
 ┌  Welcome to the Svelte CLI! (v0.9.7)
