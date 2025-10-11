@@ -2,6 +2,7 @@
 npx degit idmytro/svelte-starters/5-tw-sb .
 ```
 
+```
 ┌  Welcome to the Svelte CLI! (v0.9.7)
 │
 ◇  Which template would you like?
@@ -36,3 +37,4 @@ npx degit idmytro/svelte-starters/5-tw-sb .
 ◆  Which package manager do you want to install dependencies with?
 │  ◼ pnpm
 └
+```
