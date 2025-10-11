@@ -1,5 +1,5 @@
 ```
-npx degit idmytro/svelte-starters/5-tw-sb .
+npx degit idmytro/svelte-starters/5-tw-sb . --force
 ```
 
 ```
