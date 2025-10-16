@@ -1,6 +1,4 @@
 // For more info, see https://github.com/storybookjs/eslint-plugin-storybook#configuration-flat-config-format
-// import storybook from "eslint-plugin-storybook";
-
 import { fileURLToPath } from 'node:url';
 
 import { includeIgnoreFile } from '@eslint/compat';
@@ -9,6 +7,7 @@ import { defineConfig } from 'eslint/config';
 import prettier from 'eslint-config-prettier';
 import perfectionist from "eslint-plugin-perfectionist";
 import simpleImportSort from "eslint-plugin-simple-import-sort";
+import storybook from "eslint-plugin-storybook";
 import svelte from 'eslint-plugin-svelte';
 import globals from 'globals';
 import ts from 'typescript-eslint';
@@ -46,6 +45,14 @@ export default defineConfig(
 				svelteConfig
 			}
 		}
+	},
+	{
+		files: [
+			'**/*stories.svelte.ts',
+		],
+		plugins: {
+			storybook,
+		},
 	},
 	/* perfectionist */
 	{
