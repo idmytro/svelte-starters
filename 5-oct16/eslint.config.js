@@ -1,14 +1,18 @@
 // For more info, see https://github.com/storybookjs/eslint-plugin-storybook#configuration-flat-config-format
-import storybook from "eslint-plugin-storybook";
+// import storybook from "eslint-plugin-storybook";
 
-import prettier from 'eslint-config-prettier';
 import { fileURLToPath } from 'node:url';
+
 import { includeIgnoreFile } from '@eslint/compat';
 import js from '@eslint/js';
-import svelte from 'eslint-plugin-svelte';
 import { defineConfig } from 'eslint/config';
+import prettier from 'eslint-config-prettier';
+import perfectionist from "eslint-plugin-perfectionist";
+import simpleImportSort from "eslint-plugin-simple-import-sort";
+import svelte from 'eslint-plugin-svelte';
 import globals from 'globals';
 import ts from 'typescript-eslint';
+
 import svelteConfig from './svelte.config.js';
 
 const gitignorePath = fileURLToPath(new URL('./.gitignore', import.meta.url));
@@ -42,5 +46,40 @@ export default defineConfig(
 				svelteConfig
 			}
 		}
-	}
+	},
+	/* perfectionist */
+	{
+		plugins: {
+			perfectionist,
+		},
+		rules: {
+			"perfectionist/sort-imports": ["off", { internalPattern: ["^\\$.*"] }],
+			"perfectionist/sort-exports": [
+				1,
+				{
+					ignoreCase: true,
+					order: "asc",
+					type: "alphabetical",
+				},
+			],
+			"perfectionist/sort-named-exports": [
+				1,
+				{
+					groupKind: "mixed",
+					ignoreCase: true,
+					order: "asc",
+					type: "alphabetical",
+				},
+			],
+		},
+	},
+	/* simple-import-sort */
+	{
+		plugins: {
+			"simple-import-sort": simpleImportSort,
+		},
+		rules: {
+			"simple-import-sort/imports": 1,
+		},
+	},
 );
